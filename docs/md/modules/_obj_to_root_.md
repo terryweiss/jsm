@@ -21,7 +21,7 @@ local `#/` `$refs`.
 
 ▸ **default**(`payload`: FilePayload[], `callback`: Function): *void*
 
-*Defined in [obj.to.root.ts:15](https://github.com/terryweiss/jsm/blob/072a529/src/obj.to.root.ts#L15)*
+*Defined in [obj.to.root.ts:15](https://github.com/terryweiss/jsm/blob/479dc25/src/obj.to.root.ts#L15)*
 
 A function to find all nested objects (not `$ref` references) and move them to the root of the symbol tree and replace with with
 local `#/` `$refs`.

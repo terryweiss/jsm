@@ -20,7 +20,7 @@ Creates a top level class from each file's root element and defines the initial 
 
 ▸ **default**(`files`: FilePayload[], `callback`: Function): *void*
 
-*Defined in [define.modules.ts:12](https://github.com/terryweiss/jsm/blob/072a529/src/define.modules.ts#L12)*
+*Defined in [define.modules.ts:12](https://github.com/terryweiss/jsm/blob/479dc25/src/define.modules.ts#L12)*
 
 Creates a top level class from each file's root element and defines the initial structure of the symbol tree.
 

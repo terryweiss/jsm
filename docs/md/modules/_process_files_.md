@@ -20,7 +20,7 @@ Controls the order of operations for rendering the entire batch
 
 ▸ **processFiles**(`symbols`: any, `callback`: Function): *void*
 
-*Defined in [process.files.ts:16](https://github.com/terryweiss/jsm/blob/072a529/src/process.files.ts#L16)*
+*Defined in [process.files.ts:16](https://github.com/terryweiss/jsm/blob/479dc25/src/process.files.ts#L16)*
 
 Controls the order of operations for rendering the entire batch
 

@@ -20,7 +20,7 @@ Reads a list of filenames and creates and array of [[FilePayload]]s
 
 ▸ **default**(`fileNames`: string[], `callback`: Function): *void*
 
-*Defined in [get.files.ts:13](https://github.com/terryweiss/jsm/blob/072a529/src/get.files.ts#L13)*
+*Defined in [get.files.ts:13](https://github.com/terryweiss/jsm/blob/479dc25/src/get.files.ts#L13)*
 
 Reads a list of filenames and creates and array of [[FilePayload]]s
 

@@ -20,7 +20,7 @@ This an implementation of the [visitor pattern](https://en.wikipedia.org/wiki/Vi
 
 ▸ **crawl**(`tree`: any, `visitor`: Function, `parent?`: undefined | string, `depth`: number, `level`: number): *void*
 
-*Defined in [crawl.ts:23](https://github.com/terryweiss/jsm/blob/072a529/src/crawl.ts#L23)*
+*Defined in [crawl.ts:23](https://github.com/terryweiss/jsm/blob/479dc25/src/crawl.ts#L23)*
 
 This an implementation of the [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern). Pass in an object and it will
 traverse it using breadth first and call your visitor function once for each node it encounters

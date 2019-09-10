@@ -79,7 +79,7 @@ A String property. This will validate and render the value
 
 *Overrides [BaseProp](_baseprop_.baseprop.md).[constructor](_baseprop_.baseprop.md#constructor)*
 
-*Defined in [ArrayProp.ts:24](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L24)*
+*Defined in [ArrayProp.ts:24](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L24)*
 
 **Parameters:**
 
@@ -98,7 +98,7 @@ Name | Type | Description |
 
 • **arrayUnique**? : *undefined | false | true*
 
-*Defined in [ArrayProp.ts:104](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L104)*
+*Defined in [ArrayProp.ts:104](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L104)*
 
 Checks if all array's values are unique. Comparison for objects is reference-based.
 
@@ -108,7 +108,7 @@ ___
 
 • **class**? : *any*
 
-*Defined in [ArrayProp.ts:77](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L77)*
+*Defined in [ArrayProp.ts:77](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L77)*
 
 The class name for the items in the array, if any
 
@@ -120,7 +120,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[classSourcePath](_baseprop_.baseprop.md#classsourcepath)*
 
-*Defined in [BaseProp.ts:67](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L67)*
+*Defined in [BaseProp.ts:67](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L67)*
 
 The path to the the prooperty from the base property
 
@@ -130,7 +130,7 @@ ___
 
 • **contains**? : *any[]*
 
-*Defined in [ArrayProp.ts:85](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L85)*
+*Defined in [ArrayProp.ts:85](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L85)*
 
 Checks if array contains all values from the given array of values.
 
@@ -142,7 +142,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[defaultValue](_baseprop_.baseprop.md#optional-defaultvalue)*
 
-*Defined in [BaseProp.ts:119](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L119)*
+*Defined in [BaseProp.ts:119](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L119)*
 
 A default value for the property
 
@@ -154,7 +154,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[description](_baseprop_.baseprop.md#optional-description)*
 
-*Defined in [BaseProp.ts:83](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L83)*
+*Defined in [BaseProp.ts:83](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L83)*
 
 Detailed documentation
 
@@ -166,7 +166,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[empty](_baseprop_.baseprop.md#optional-empty)*
 
-*Defined in [BaseProp.ts:103](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L103)*
+*Defined in [BaseProp.ts:103](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L103)*
 
 Checks if given value is empty (=== '', === null, === undefined).
 
@@ -178,7 +178,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[equals](_baseprop_.baseprop.md#optional-equals)*
 
-*Defined in [BaseProp.ts:95](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L95)*
+*Defined in [BaseProp.ts:95](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L95)*
 
 Checks if value equals ("===") comparison
 
@@ -190,7 +190,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[isDefined](_baseprop_.baseprop.md#optional-isdefined)*
 
-*Defined in [BaseProp.ts:87](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L87)*
+*Defined in [BaseProp.ts:87](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L87)*
 
 Checks if value is defined (!== undefined, !== null). This is the only decorator that ignores skipMissingProperties option.
 
@@ -202,7 +202,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[isIn](_baseprop_.baseprop.md#optional-isin)*
 
-*Defined in [BaseProp.ts:111](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L111)*
+*Defined in [BaseProp.ts:111](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L111)*
 
 Checks if value is in a array of allowed values.
 
@@ -214,7 +214,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[isNotIn](_baseprop_.baseprop.md#optional-isnotin)*
 
-*Defined in [BaseProp.ts:115](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L115)*
+*Defined in [BaseProp.ts:115](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L115)*
 
 Checks if value is not in a array of disallowed values.
 
@@ -226,7 +226,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[isOptional](_baseprop_.baseprop.md#optional-isoptional)*
 
-*Defined in [BaseProp.ts:91](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L91)*
+*Defined in [BaseProp.ts:91](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L91)*
 
 Checks if given value is empty (=== null, === undefined) and if so, ignores all the validators on the property.
 
@@ -236,7 +236,7 @@ ___
 
 • **items**? : *any*
 
-*Defined in [ArrayProp.ts:81](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L81)*
+*Defined in [ArrayProp.ts:81](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L81)*
 
 What the types of the array are allowed to be
 
@@ -246,7 +246,7 @@ ___
 
 • **maxLength**? : *undefined | number*
 
-*Defined in [ArrayProp.ts:100](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L100)*
+*Defined in [ArrayProp.ts:100](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L100)*
 
 Checks if array's length is as maximal this number.
 
@@ -256,7 +256,7 @@ ___
 
 • **minLength**? : *undefined | number*
 
-*Defined in [ArrayProp.ts:95](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L95)*
+*Defined in [ArrayProp.ts:95](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L95)*
 
 Checks if array's length is as minimal this number.
 
@@ -268,7 +268,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[name](_baseprop_.baseprop.md#name)*
 
-*Defined in [BaseProp.ts:71](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L71)*
+*Defined in [BaseProp.ts:71](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L71)*
 
 The name of the symbol
 
@@ -278,7 +278,7 @@ ___
 
 • **notContains**? : *any[]*
 
-*Defined in [ArrayProp.ts:90](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L90)*
+*Defined in [ArrayProp.ts:90](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L90)*
 
 Checks if array does not contain any of the given values.
 
@@ -290,7 +290,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[notEmpty](_baseprop_.baseprop.md#optional-notempty)*
 
-*Defined in [BaseProp.ts:107](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L107)*
+*Defined in [BaseProp.ts:107](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L107)*
 
 Checks if given value is empty (=== '', === null, === undefined).
 
@@ -302,7 +302,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[notEquals](_baseprop_.baseprop.md#optional-notequals)*
 
-*Defined in [BaseProp.ts:99](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L99)*
+*Defined in [BaseProp.ts:99](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L99)*
 
 Checks if value equals ("===") comparison.
 
@@ -314,7 +314,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[ownDecorator](_baseprop_.baseprop.md#protected-owndecorator)*
 
-*Defined in [BaseProp.ts:124](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L124)*
+*Defined in [BaseProp.ts:124](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L124)*
 
 The prop instance's own type decorator
 
@@ -324,7 +324,7 @@ ___
 
 • **parentObj**: *any*
 
-*Defined in [ArrayProp.ts:33](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L33)*
+*Defined in [ArrayProp.ts:33](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L33)*
 
 The immediate parent in the symbol tree
 
@@ -336,7 +336,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[reportedType](_baseprop_.baseprop.md#reportedtype)*
 
-*Defined in [BaseProp.ts:63](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L63)*
+*Defined in [BaseProp.ts:63](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L63)*
 
 The type that was defined in the json/yaml
 
@@ -346,7 +346,7 @@ ___
 
 • **symbols**: *any*
 
-*Defined in [ArrayProp.ts:33](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L33)*
+*Defined in [ArrayProp.ts:33](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L33)*
 
 The entire symbol tree so that references can be identified
 
@@ -358,7 +358,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[sys](_baseprop_.baseprop.md#protected-sys)*
 
-*Defined in [BaseProp.ts:129](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L129)*
+*Defined in [BaseProp.ts:129](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L129)*
 
 A local for templates to access lodash
 
@@ -370,7 +370,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[title](_baseprop_.baseprop.md#optional-title)*
 
-*Defined in [BaseProp.ts:79](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L79)*
+*Defined in [BaseProp.ts:79](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L79)*
 
 Short documentation
 
@@ -382,7 +382,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[typeName](_baseprop_.baseprop.md#typename)*
 
-*Defined in [BaseProp.ts:75](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L75)*
+*Defined in [BaseProp.ts:75](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L75)*
 
 The name typescript expects for the type
 
@@ -394,7 +394,7 @@ The name typescript expects for the type
 
 *Overrides [BaseProp](_baseprop_.baseprop.md).[prop](_baseprop_.baseprop.md#prop)*
 
-*Defined in [ArrayProp.ts:109](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L109)*
+*Defined in [ArrayProp.ts:109](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L109)*
 
 The template to render this type
 
@@ -408,7 +408,7 @@ The template to render this type
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[decs](_baseprop_.baseprop.md#protected-decs)*
 
-*Defined in [BaseProp.ts:144](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L144)*
+*Defined in [BaseProp.ts:144](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L144)*
 
 The list of decorators templates supported by this type
 
@@ -422,7 +422,7 @@ ___
 
 *Overrides [BaseProp](_baseprop_.baseprop.md).[headers](_baseprop_.baseprop.md#headers)*
 
-*Defined in [ArrayProp.ts:138](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L138)*
+*Defined in [ArrayProp.ts:138](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L138)*
 
 Things like extra classes and enums that need to be at the top level of the module
 
@@ -436,7 +436,7 @@ ___
 
 *Overrides [BaseProp](_baseprop_.baseprop.md).[imports](_baseprop_.baseprop.md#imports)*
 
-*Defined in [ArrayProp.ts:116](https://github.com/terryweiss/jsm/blob/072a529/src/ArrayProp.ts#L116)*
+*Defined in [ArrayProp.ts:116](https://github.com/terryweiss/jsm/blob/479dc25/src/ArrayProp.ts#L116)*
 
 Returns a string array of needed imports
 
@@ -450,7 +450,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[renderDeclarations](_baseprop_.baseprop.md#renderdeclarations)*
 
-*Defined in [BaseProp.ts:190](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L190)*
+*Defined in [BaseProp.ts:190](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L190)*
 
 Render the decorators and characteristics
 
@@ -464,7 +464,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[renderProp](_baseprop_.baseprop.md#renderprop)*
 
-*Defined in [BaseProp.ts:211](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L211)*
+*Defined in [BaseProp.ts:211](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L211)*
 
 Render the property, decorators and types and formats the output
 
@@ -478,7 +478,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[validationImports](_baseprop_.baseprop.md#validationimports)*
 
-*Defined in [BaseProp.ts:169](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L169)*
+*Defined in [BaseProp.ts:169](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L169)*
 
 Gets the validators that are actually in use so that a single import can be created
 
@@ -492,7 +492,7 @@ Gets the validators that are actually in use so that a single import can be crea
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[defaultTemplateOptions](_baseprop_.baseprop.md#protected-defaulttemplateoptions)*
 
-*Defined in [BaseProp.ts:134](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L134)*
+*Defined in [BaseProp.ts:134](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L134)*
 
 The default options for the template render
 
@@ -500,25 +500,25 @@ The default options for the template render
 
 • **compileDebug**: *boolean* = false
 
-*Defined in [BaseProp.ts:137](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L137)*
+*Defined in [BaseProp.ts:137](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L137)*
 
 ###  debug
 
 • **debug**: *boolean* = false
 
-*Defined in [BaseProp.ts:136](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L136)*
+*Defined in [BaseProp.ts:136](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L136)*
 
 ###  rmWhitespace
 
 • **rmWhitespace**: *boolean* = false
 
-*Defined in [BaseProp.ts:135](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L135)*
+*Defined in [BaseProp.ts:135](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L135)*
 
 ###  escape
 
 ▸ **escape**(`s`: any): *any*
 
-*Defined in [BaseProp.ts:138](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L138)*
+*Defined in [BaseProp.ts:138](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L138)*
 
 **Parameters:**
 
@@ -536,7 +536,7 @@ ___
 
 *Inherited from [BaseProp](_baseprop_.baseprop.md).[propToTemplate](_baseprop_.baseprop.md#proptotemplate)*
 
-*Defined in [BaseProp.ts:51](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L51)*
+*Defined in [BaseProp.ts:51](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L51)*
 
 The map from property to template decorators of the class validator class
 
@@ -544,40 +544,40 @@ The map from property to template decorators of the class validator class
 
 • **empty**: *string* = "IsEmpty"
 
-*Defined in [BaseProp.ts:55](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L55)*
+*Defined in [BaseProp.ts:55](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L55)*
 
 ###  equals
 
 • **equals**: *string* = "Equals"
 
-*Defined in [BaseProp.ts:53](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L53)*
+*Defined in [BaseProp.ts:53](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L53)*
 
 ###  isDefined
 
 • **isDefined**: *string* = "IsDefined"
 
-*Defined in [BaseProp.ts:52](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L52)*
+*Defined in [BaseProp.ts:52](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L52)*
 
 ###  isIn
 
 • **isIn**: *string* = "IsIn"
 
-*Defined in [BaseProp.ts:57](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L57)*
+*Defined in [BaseProp.ts:57](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L57)*
 
 ###  isNotIn
 
 • **isNotIn**: *string* = "IsNotIn"
 
-*Defined in [BaseProp.ts:58](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L58)*
+*Defined in [BaseProp.ts:58](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L58)*
 
 ###  notEmpty
 
 • **notEmpty**: *string* = "NotEmpty"
 
-*Defined in [BaseProp.ts:56](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L56)*
+*Defined in [BaseProp.ts:56](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L56)*
 
 ###  notEquals
 
 • **notEquals**: *string* = "NotEquals"
 
-*Defined in [BaseProp.ts:54](https://github.com/terryweiss/jsm/blob/072a529/src/BaseProp.ts#L54)*
+*Defined in [BaseProp.ts:54](https://github.com/terryweiss/jsm/blob/479dc25/src/BaseProp.ts#L54)*
