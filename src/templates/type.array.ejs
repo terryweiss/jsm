@@ -1,0 +1,8 @@
+    /**
+    * <%= prop.title%>
+    * <%= prop.description %>
+    */
+    <% sys.each(decs, function(v){ %><%- v %>
+    <%}); _%>
+@IsArray()
+    <%= prop.name %><%= prop.required ? "" : "?" %>: <%= prop.items %>[]<% if ( !sys.isUndefined( prop.defaultValue ) ){ %> = <%= prop.defaultValue %><% } %>;

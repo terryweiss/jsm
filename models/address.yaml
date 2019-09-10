@@ -1,0 +1,35 @@
+Address:
+  title: A canonical physical address. Based on `adr` microformat
+  type: object
+  properties:
+    street-address:
+      title: The first line of the street address
+      type: string
+      maxLength: 128
+    extended-address:
+      title: Line 2 of a street address
+      type: string
+      maxLength: 128
+    po-box:
+      title: A PO Box number
+      type: string
+      maxLength: 24
+    locality:
+      title: The city when US
+      type: string
+      maxLength: 128
+    region:
+      title: The state when US
+      type: string
+      maxLength: 128
+    postal-code:
+      title: A zip code
+      type: string
+      maxLength: 16
+    country:
+      title: The country
+      type: string
+      maxLength: 128
+    geo:
+      $ref: ./geo.yaml
+

@@ -1,0 +1,1 @@
+@ArrayNotContains([<%= sys.map(prop.notContains, function(v){return sys.isString(v)?`"${v}"`: v}).join( "," ) %>]) // Checks if array does not contain any of the given values.

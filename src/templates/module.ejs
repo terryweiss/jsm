@@ -1,0 +1,43 @@
+/**
+* <%= module.title %>
+*
+* <%= module.description %>
+
+* @module <%= module.modelNamespace %><%= sys.isEmpty(module.modelNamespace) ? "": "." %><%= module.modelName %>
+*/
+
+/** Imports **/
+import { validate <%= !sys.isEmpty(validationImports) ? ", " + validationImports.join(", ") : "" %> } from "class-validator";
+import { transformAndValidate } from "class-transformer-validator";
+<%= imports.join("\n") %>
+
+<%= headers.join("\n") %>
+
+export class <%= module.modelName %> <%= module.modelExtends ? module.modelExtends : "" %>{
+    constructor( instance?:any ){
+        if ( instance ) {
+        <% sys.each(module.members, function(v){ %>
+            if ( typeof instance.<%= v.name %> !== "undefined" ){
+                this.<%= v.name %> = instance.<%= v.name %>;
+            }
+        <%})%>
+        }
+    }
+<% if ( !sys.isEmpty( properties )) { %>
+<%= properties %>
+<% } %>
+
+    /**
+     * Validate an instance of this class at runtime. Returns a promise
+     */
+    public async validate():Promise<any> {
+        return validate( this, { validationError: { target: false } } );
+    }
+
+    /**
+     * Create an instance from a plain object
+     */
+    static async from( o:any ){
+        return transformAndValidate( <%= module.modelName %>, o );
+    }
+}

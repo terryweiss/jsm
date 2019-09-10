@@ -1,0 +1,8 @@
+    /**
+    * <%= prop.title%>
+    * <%= prop.description %>
+    */
+    <% sys.each(decs, function(v){ %><%- v %>
+    <%}); _%>
+@IsEnum(<%= prop.enumType %>)
+    <%= prop.name %><%= prop.required ? "" : "?" %>: <%= prop.enumType %><% if ( !sys.isUndefined( prop.defaultValue ) ){ %> = <%= prop.defaultValue %> <% } %>;

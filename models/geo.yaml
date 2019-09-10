@@ -1,0 +1,16 @@
+Geo:
+  type: object
+  title: A geographic location usable by a mapping application
+  properties:
+    lat:
+      title: Latitude
+      type: number
+      format: float
+    long:
+      title: Longitude
+      type: number
+      format: float
+    alt:
+      title: Altitude
+      type: number
+      format: float

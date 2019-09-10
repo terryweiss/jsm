@@ -1,0 +1,1 @@
+@ArrayContains([<%= sys.map(prop.contains, function(v){return sys.isString(v)?`"${v}"`: v}).join( "," ) %>]) // Checks if array contains all values from the given array of values

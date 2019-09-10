@@ -1,0 +1,55 @@
+Person:
+  title: A human being. the basis for other people types
+  type: object
+  properties:
+    prefix:
+      title: Mrs, Mr, Dr
+      type: string
+    first:
+      title: Foist name
+      type: string
+    middle:
+      title: Midduhl name
+      type: string
+    last:
+      title: Last name
+      type: string
+    suffix:
+      title: Phd, III, etc.
+      type: string
+    sort:
+      title: How to sort this name in lists
+      type: string
+    addresses:
+      type: array
+      items:
+        $ref: ./address.yaml
+    phones:
+      type: array
+      items:
+        $ref: ./phone.yaml
+    url:
+      title: An associated url
+      type: string
+    uid:
+      title: The global identifier
+      type: string
+    tags:
+      title: Tags to locate the thing later
+      type: array
+      items:
+        type: string
+    comments:
+      title: Offical comments
+      $ref: ./comment.yaml
+    notes:
+      title: Internal notes
+      $ref: ./comment.yaml
+    organizations:
+      title: The organization this person belongs to
+      type: array
+      items:
+        $ref: ./organization.yaml
+    timezone:
+      title: The timezone where the person is
+      type: string

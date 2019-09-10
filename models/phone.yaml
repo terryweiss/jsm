@@ -1,0 +1,12 @@
+Phone:
+  title: A phone number
+  type: object
+  properties:
+    type:
+      title: Phone number type, like "home", "work", etc.
+      type: string
+    tel:
+      title: The phone number being stored
+      type: string
+      format: phone
+

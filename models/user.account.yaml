@@ -1,0 +1,27 @@
+UserAccount:
+  type: object
+  properties:
+    accountEmail:
+      title: The email address to use for account management
+      type: string
+      key:
+        title: The user's global identifier
+        type: string
+      lastPasswordChange:
+        type: string
+        format: date-time
+        title: The last time the password was changed
+      lastLogin:
+        type: string
+        format: date-time
+        title: The last time this user logged in
+      forcePasswordChange:
+        type: boolean
+        title: Force the user to login
+      salt:
+        title: The user's salt for hashing and encrypting
+        type: string
+      password:
+        title: The stored password
+        type: string
+

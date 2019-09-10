@@ -1,0 +1,14 @@
+Comment:
+  title: Offical comments
+  type: object
+  properties:
+    author:
+      title: Who left the comment
+      type: string
+    added:
+      title: When it was added
+      type: string
+      format: date-time
+    content:
+      title: The comment itself
+      type: string

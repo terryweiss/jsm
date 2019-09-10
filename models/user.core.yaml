@@ -1,0 +1,39 @@
+UserCore:
+  title: A system user
+  type: object
+  properties:
+    timezone:
+      title: The timezone where the user lives
+      type: string
+    locale:
+      title: In the event the system is ever internationalized
+      type: string
+    nickname:
+      title: The user's peferred name
+      type: string
+    salt:
+      title: The user's salt for hashing and encrypting
+      type: string
+    accountEmail:
+      title: The email address to use for account management
+      type: string
+    key:
+      title: The user's global identifier
+      type: string
+    lastPasswordChange:
+      type: string
+      format: date-time
+      title: The last time the password was changed
+    lastLogin:
+      type: string
+      format: date-time
+      title: The last time this user logged in
+    forcePasswordChange:
+      type: boolean
+      title: Force the user to login
+    person:
+      title: The person record, if one exists
+      $ref: ./person.yaml
+    organization:
+      title: The organization a user is associated with
+      $ref: ./organization.yaml

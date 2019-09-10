@@ -1,0 +1,5 @@
+    /**
+    * <%= prop.title%>
+    * <%= prop.description %>
+    */
+    <%= prop.name %><%= prop.required ? "" : "?" %>: any<% if ( !sys.isUndefined( prop.defaultValue ) ){ %> = <%= prop.defaultValue %> <% } %>;

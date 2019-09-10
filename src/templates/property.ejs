@@ -1,0 +1,9 @@
+public <%= property.name _%>
+<%= property.required ? "" : "?" %>:
+<%= property.typeName _%>
+<% if (!sys.isUndefined( property.defaultValue )) {%> = <%
+if (property.needsQuotes) { %>
+    "<%= property.defaultValue %>"
+<% } else { %>
+    <%= property.defaultValue %>
+<% }} %>;

@@ -1,0 +1,8 @@
+    /**
+    * <%= prop.title%>
+    * <%= prop.description %>
+    */
+    <% sys.each(decs, function(v){ %><%- v %>
+    <%}); _%>
+@IsInt()
+    <%= prop.name %><%= prop.required ? "" : "?" %>: number<% if ( !sys.isUndefined( prop.defaultValue ) ){ %> = <%= prop.defaultValue %><% } %>;

@@ -1,0 +1,6 @@
+    /**
+    * <%= prop.title%>
+    * <%= prop.description %>
+    */
+    @IsBoolean()
+    <%= prop.name %><%= prop.required ? "" : "?" %>: boolean<% if ( !sys.isUndefined( prop.defaultValue ) ){ %> = <%= prop.defaultValue %> <% } %>;

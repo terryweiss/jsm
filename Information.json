@@ -1,0 +1,119 @@
+{
+	"Information": {
+		"type"      : "object",
+		"properties": {
+			"timeStamp"    : {
+				"type"       : "string",
+				"description": "When the stats were taken",
+				"format"     : "date-time"
+			},
+			"uptime"       : {
+				"type"       : "integer",
+				"format"     : "int64",
+				"description": "Milliseconds since unix epoch"
+			},
+			"priority"     : {
+				"type": "integer"
+			},
+			"homeDirecory" : {
+				"type": "string"
+			},
+			"tempDirectory": {
+				"type": "string"
+			},
+			"hostName"     : {
+				"type": "string"
+			},
+			"platform"     : {
+				"type": "string"
+			},
+			"osRelease"    : {
+				"type": "string"
+			},
+			"os"           : {
+				"type"      : "object",
+				"properties": {
+					"release": {
+						"type": "string"
+					},
+					"name"   : {
+						"type": "string"
+					}
+				}
+			},
+			"processUser"  : {
+				"type": "object"
+			},
+			"load"         : {
+				"type"       : "array",
+				"items"      : {
+					"type": "number"
+				},
+				"description": "Average load for 1 minute, 5 minutes and 15 minutes"
+			},
+			"memory"       : {
+				"type"      : "object",
+				"properties": {
+					"free" : {
+						"type"  : "integer",
+						"format": "int64"
+					},
+					"used" : {
+						"type"  : "integer",
+						"format": "int64"
+					},
+					"total": {
+						"type"  : "integer",
+						"format": "int64"
+					}
+				}
+			},
+			"architecture" : {
+				"type": "string"
+			},
+			"cpu"          : {
+				"type" : "array",
+				"items": {
+					"type"      : "object",
+					"properties": {
+						"model": {
+							"type": "string"
+						},
+						"speed": {
+							"type": "number"
+						},
+						"times": {
+							"type"      : "object",
+							"properties": {
+								"user": {
+									"type"       : "number",
+									"description": "In milliseconds"
+								},
+								"nice": {
+									"type"       : "integer",
+									"format"     : "int64",
+									"description": "In milliseconds"
+								},
+								"sys" : {
+									"type"       : "integer",
+									"format"     : "int64",
+									"description": "In milliseconds"
+								},
+								"idle": {
+									"type"       : "integer",
+									"format"     : "int64",
+									"description": "In milliseconds"
+								},
+								"irq" : {
+									"type"       : "integer",
+									"format"     : "int64",
+									"description": "In milliseconds"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

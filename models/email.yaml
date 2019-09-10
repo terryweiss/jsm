@@ -1,0 +1,10 @@
+Email:
+  type: object
+  properties:
+    type:
+      title: The type, like "home", "work", "billing", etc.
+      type: string
+    adr:
+      title: The actual email address
+      type: string
+      format: email

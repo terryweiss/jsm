@@ -1,0 +1,51 @@
+{
+  "name": "@terryweiss/jsm",
+  "version": "2.0.0",
+  "description": "Generates TypeScript decorated with [class-validator](https://github.com/typestack/class-validator) decorators based on a json-schema",
+  "main": "index.js",
+  "bin": {
+    "jsm": "./index.js"
+  },
+  "keywords": [
+    "typescript",
+    "types",
+    "json schema"
+  ],
+  "repository": "git@github.com:terryweiss/jsm.git",
+  "author": "Terry Weiss",
+  "license": "MIT",
+  "dependencies": {
+    "@terryweiss/config": "^3.0.0",
+    "@terryweiss/logger": "^3.0.0",
+    "@types/async": "^2.4.2",
+    "@types/ejs": "^2.6.3",
+    "@types/glob": "^7.1.1",
+    "@types/js-yaml": "^3.12.1",
+    "@types/json-schema": "^7.0.3",
+    "@types/lodash": "^4.14.136",
+    "@types/mkdirp": "^0.5.2",
+    "@types/number-to-words": "^1.2.0",
+    "@types/underscore.string": "0.0.33",
+    "async": "^2.6.3",
+    "class-transformer": "^0.2.3",
+    "class-transformer-validator": "^0.7.1",
+    "class-validator": "^0.9.1",
+    "ejs": "^2.6.2",
+    "glob": "^7.1.4",
+    "js-yaml": "^3.13.1",
+    "json-schema-ref-parser": "^6.1.0",
+    "lodash": "^4.17.15",
+    "mkdirp": "^0.5.1",
+    "number-to-words": "^1.2.4",
+    "underscore.string": "^3.3.5"
+  },
+  "devDependencies": {
+    "@terryweiss/maker": "^1.9.0",
+    "semver": "^6.3.0",
+    "tap": "^14.6.1",
+    "typedoc": "^0.15.0",
+    "typedoc-clarity-theme": "^1.1.0",
+    "typedoc-plugin-markdown": "^2.1.1",
+    "typescript": "^3.5.3"
+  }
+}

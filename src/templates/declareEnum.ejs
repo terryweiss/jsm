@@ -1,0 +1,9 @@
+export enum <%= prop.enumType %> {
+<% sys.each(prop.items, function(v,k){ -%>
+<% if (prop.reportedType === "string") { -%>
+    <%= camelize(v) %> = <%= `"${v}"` %><%= k < prop.items.length -1 ? ",": "" %>
+<% } else { -%>
+    <%= `${camelize(n2w.toWords(v))}` %> = <%= v %><%= k < prop.items.length -1 ? ",": "" %>
+<% } -%>
+<%}) -%>
+}

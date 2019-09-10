@@ -1,0 +1,94 @@
+{
+	"rules": {
+		"adjacent-overload-signatures"    : true,
+		"no-internal-module"              : true,
+		"no-namespace"                    : false,
+		"prefer-for-of"                   : true,
+		"typedef"                         : true,
+		"no-non-null-assertion"           : true,
+		"unified-signatures"              : true,
+		"ban-comma-operator"              : true,
+		"curly"                           : true,
+		"no-bitwise"                      : true,
+		"no-conditional-assignment"       : true,
+		"no-duplicate-super"              : true,
+		"no-construct"                    : true,
+		"no-debugger"                     : true,
+		"no-arg"                          : true,
+		"no-duplicate-switch-case"        : true,
+		"no-implicit-dependencies"        : true,
+		"no-eval"                         : true,
+		"allow-empty-catch"               : true,
+		"no-string-throw"                 : true,
+		"no-object-literal-type-assertion": true,
+		"prefer-readonly"                 : true,
+		"no-string-literal"               : true,
+		"no-shadowed-variable"            : true,
+		"no-misused-new"                  : true,
+		"no-invalid-this"                 : true,
+		"triple-equals"                   : true,
+		"trailing-comma"                  : true,
+		"arrow-parens"                    : true,
+		"use-default-type-parameter"      : true,
+		"binary-expression-operand-order" : true,
+		"interface-name"                  : [
+			true,
+			"always-prefix"
+		],
+		"newline-before-return"           : true,
+		"arrow-return-shorthand"          : true,
+		"new-parens"                      : true,
+		"completed-docs"                  : false,
+		"comment-format"                  : [
+			true,
+			"check-space"
+		],
+		"class-name"                      : true,
+
+		"semicolon"                       : [
+			true,
+			"always"
+		],
+		"no-duplicate-imports"            : false,
+		"no-irregular-whitespace"         : true,
+		"no-trailing-whitespace"          : false,
+		"no-unnecessary-callback-wrapper" : true,
+		"prefer-method-signature"         : true,
+		"prefer-template"                 : true,
+		"one-variable-per-declaration"    : true,
+		"switch-final-break"              : [
+			true,
+			"always"
+		],
+		"quotemark"                       : [
+			true,
+			"double"
+		],
+		"number-literal-format"           : true,
+		"linebreak-style"                 : [
+			true,
+			"LF"
+		],
+		"indent"                          : [
+			true
+		],
+		"deprecation"                     : true,
+		"use-isnan"                       : true,
+		"no-unused-expression"            : [
+			true,
+			"allow-fast-null-checks"
+		],
+		"no-unsafe-finally"               : true,
+		"restrict-plus-operands"          : true,
+		"no-unused-variable"              : true,
+		"no-use-before-declare"           : true,
+		"prefer-object-spread"            : true,
+		"no-var-keyword"                  : true,
+		"no-unnecessary-class"            : [
+			true,
+			"allow-static-only",
+			"allow-constructor-only"
+		],
+		"no-this-assignment"              : true
+	}
+}

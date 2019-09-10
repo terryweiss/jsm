@@ -1,0 +1,798 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>core.jsm</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">core.jsm</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> core.jsm</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#json-schema-model-jsm" id="json-schema-model-jsm" style="color: inherit; text-decoration: none;">
+					<h1>JSON Schema Model (jsm)</h1>
+				</a>
+				<p>Generates TypeScript decorated with <a href="https://github.com/typestack/class-validator">class-validator</a> decorators based on a json-schema.</p>
+				<a href="#state-of-development" id="state-of-development" style="color: inherit; text-decoration: none;">
+					<h2>State of Development</h2>
+				</a>
+				<p>Like many other open-source projects that are understaffed, this is somewhere on the continuum
+					between &quot;good enough to get out the door&quot; and &quot;all of the planned and dreamed for features are there&quot;.
+					In this case that is further exacerbated by the fact that json-schema seems to have devolved into a
+				a few different dialects. </p>
+				<p>This project was envisioned as a way of gaining access to strongly typed definitions/components from
+					Swagger, with pure json-schema a nice-to-have. But some differences from Swagger to json-schema were difficult to reconcile.
+					Finally, class-validator accepts json-schema in its validation tools, but the decorators
+				are a disjoint language against Swagger and json-schema. </p>
+				<p>Which might beg the question: why do this? If you aren&#39;t asking that question, you aren&#39;t thinking
+					carefully about what this project does. Well, one answer is that this project makes sense if
+					you consider json-schema/Swagger as a means of validating serialized objects in transit or at rest
+					and that there is a role for the object that contains the hydrated instance to continue the
+					original schema&#39;s validation as well as the values it mutates along its lifetime. Indeed, this
+					library does not try to connect the lifetimes of the JSON and the object in any way. If you use
+					Swagger, the swagger-tools will pull these objects out of <code>definitions</code> and <code>paths</code> and return you a
+					plain old JS object. You can pass that into one of these constructors and, since it is validated, serialize
+				it again knowing it has to be valid. Anyway, that&#39;s the idea.</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h1>Installation</h1>
+				</a>
+				<pre><code class="language-bash">sudo npm install @concorde2k/json.schema.model -g
+
+</code></pre>
+				<a href="#technical-docs" id="technical-docs" style="color: inherit; text-decoration: none;">
+					<h1>Technical Docs</h1>
+				</a>
+				<p>A description of the internal API for contributors can be found on <a href="https://bitbucket.org/concorde2000/core.jsm/src/master/docs/md/SUMMARY.md">bitbucket</a>
+				or <a href="./docs/html/index.html">locally</a>. </p>
+				<a href="#cli" id="cli" style="color: inherit; text-decoration: none;">
+					<h1>CLI</h1>
+				</a>
+				<p>This is a static code generator, there is no API, just a CLI. The options are:</p>
+				<ul>
+					<li><code>--help</code>          Show help</li>
+					<li><code>--version</code>       Show version number</li>
+					<li><code>--log-level</code>     Sets the logging level for the process. Choices are<pre><code>              <span class="hljs-string">"trace"</span>, <span class="hljs-string">"debug"</span>, <span class="hljs-string">"warn"</span>, <span class="hljs-string">"data"</span>, <span class="hljs-string">"log"</span>, <span class="hljs-string">"info"</span>, <span class="hljs-string">"warn"</span>, <span class="hljs-string">"error"</span></code></pre></li>
+					<li><code>-f, --infiles</code>   The path to your schema files, can be a glob to yaml or json<pre><code>               <span class="hljs-built_in">files</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">a</span> mix thereof</code></pre></li>
+					<li><code>-o, --outpath</code>   The path to write the files to. Class paths are appended to this</li>
+					<li><code>-r, --rootName</code>  When dealing with a schema that does not contains a root element, you can name the resultant object with this. This is only valuable when you generating from a single file.</li>
+				</ul>
+				<a href="#validation-keywords" id="validation-keywords" style="color: inherit; text-decoration: none;">
+					<h1>Validation keywords</h1>
+				</a>
+				<p><code>json.schema.model</code> supports the common subset of keywords from swagger and jon-schema. Where the interpretations are
+				in conflict, this tends to prefer swagger.</p>
+				<a href="#common-keywords" id="common-keywords" style="color: inherit; text-decoration: none;">
+					<h2>Common keywords</h2>
+				</a>
+				<ul>
+					<li><code>name</code> This is specific to <code>json.schema.model</code> and is used to name a class from the key of the object definition. it is auto-populated
+						and is available in the template that generates the code. <pre><code class="language-json">{
+  "MyModel": { // &lt;-- this is the name property of the runtime generator
+      "type": "object",
+      "properties":{}
+  }
+}</code></pre>
+					</li>
+					<li><code>title:string</code> as in json-schema</li>
+					<li><code>description:string</code> as in json-schema</li>
+					<li><code>x-is-defined:boolean</code> Extension for class-validator, checks if value is defined (!== undefined, !== null)</li>
+					<li><code>required:array</code> as in json-schema</li>
+					<li><code>const:string</code> as in json-schema. Also as <code>x-equals</code>. Checks if value equals (&quot;===&quot;) comparison.</li>
+					<li><code>x-not-equals</code> as in class-validator. Checks if value not equal (&quot;!==&quot;) comparison.</li>
+					<li><code>x-empty:boolean</code> as in class-validator. Checks if given value is empty (=== &#39;&#39;, === null, === undefined).</li>
+					<li><code>x-not-empty:boolean</code> as in class-validator. Checks if given value is not empty (!== &#39;&#39;, !== null, !== undefined).</li>
+					<li><code>x-in:array</code> as in class-validator. Checks if value is in a array of allowed values.</li>
+					<li><code>x-not-in:array</code> as in class-validator. Checks if value is not in a array of disallowed values.</li>
+					<li><code>x-default</code> specify a default value for the property</li>
+					<li><code>string</code>, <code>number</code>, <code>integer</code>, <code>boolean</code>, <code>array</code>, <code>object</code> data type keywords as in json-schema</li>
+				</ul>
+				<a href="#object-keywords" id="object-keywords" style="color: inherit; text-decoration: none;">
+					<h2>Object keywords</h2>
+				</a>
+				<ul>
+					<li><code>x-model-name:string</code> specify a name for the generated class</li>
+					<li><code>x-model-path:string</code> specify a path (starting from <code>outFiles</code> option) that the module should be written</li>
+					<li><code>x-namespace:string</code> Used for documentation only when defining the <code>@module</code> keyword</li>
+					<li><code>x-extends:string</code> If this is a subclass of some other class, put that class path here</li>
+				</ul>
+				<a href="#array-keywords" id="array-keywords" style="color: inherit; text-decoration: none;">
+					<h2>Array keywords</h2>
+				</a>
+				<ul>
+					<li><code>minItems</code>, <code>maxItems</code>, <code>uniqueItems</code> as in json-schema</li>
+					<li><code>x-contains:array</code> as in class-validator. Checks if array contains all values from the given array of values.</li>
+					<li><code>x-not-contains:array</code> as in class-validator. Checks if array does not contain any of the given values.</li>
+					<li><code>items:array</code> as in swagger which is always an array</li>
+				</ul>
+				<a href="#date-keywords" id="date-keywords" style="color: inherit; text-decoration: none;">
+					<h2>Date keywords</h2>
+				</a>
+				<ul>
+					<li><code>x-min-date:Date|string</code> as in class-validator. Checks if the value is a date that&#39;s after the specified date.</li>
+					<li><code>x-max-date:Date|string</code> as in class-validator. Checks if the value is a date that&#39;s before the specified date.</li>
+				</ul>
+				<a href="#integernumber-keywords" id="integernumber-keywords" style="color: inherit; text-decoration: none;">
+					<h2>Integer/Number keywords</h2>
+				</a>
+				<ul>
+					<li><code>minimum</code>, <code>maximum</code>, <code>multipleOf</code> as json-schema</li>
+					<li><code>x-positive-number:boolean</code> as in class-validator. Checks if the value is a positive number.</li>
+					<li><code>x-negative-number:boolean</code> as in class-validator. Checks if the value is a negative number.</li>
+				</ul>
+				<a href="#string-keywords" id="string-keywords" style="color: inherit; text-decoration: none;">
+					<h2>String keywords</h2>
+				</a>
+				<ul>
+					<li><code>minLength</code>, <code>maxLength</code>, <code>pattern</code> as in json-schema</li>
+					<li><code>x-contains:string</code> as in class-validator. Checks if the string contains the seed.</li>
+					<li><code>x-not-contains</code> as in class-validator. Checks if the string not contains the seed.</li>
+				</ul>
+				<a href="#string-formats" id="string-formats" style="color: inherit; text-decoration: none;">
+					<h3>String formats</h3>
+				</a>
+				<p>This tool tries to supply the union of what json-schema and class-validator defines for strings. Admittedly, not well. But there it is.
+				<strong>json_schema</strong></p>
+				<ul>
+					<li><code>hostname</code> </li>
+					<li><code>email</code> </li>
+					<li><code>ipv4</code></li>
+					<li><code>ipv6</code></li>
+					<li><code>uri</code></li>
+					<li><code>date-time</code>, <code>date</code>, <code>time</code> These all create a <code>Date</code> object</li>
+				</ul>
+				<p><strong>class-validator</strong></p>
+				<ul>
+					<li><code>base64</code>  </li>
+					<li><code>ascii</code>     </li>
+					<li><code>alphanumeric</code></li>
+					<li><code>alpha</code>       </li>
+					<li><code>number-string</code></li>
+					<li><code>date-string</code></li>
+					<li><code>boolean-string</code>       </li>
+					<li><code>iso8601</code></li>
+					<li><code>militaryTime</code>        </li>
+					<li><code>json</code>       </li>
+					<li><code>lowerCase</code></li>
+					<li><code>upperCase</code></li>
+					<li><code>mongoId</code></li>
+					<li><code>uuid</code></li>
+				</ul>
+				<a href="#using-jsm" id="using-jsm" style="color: inherit; text-decoration: none;">
+					<h1>Using JSM</h1>
+				</a>
+				<p>As stated above, this is a CLI tool. At it&#39;s simplest you can create models from a directory like so:</p>
+				<pre><code class="language-bash">jsm -f <span class="hljs-string">"models/*.yaml"</span> -o ../src/models </code></pre>
+				<p>From a swagger file:</p>
+				<pre><code class="language-bash">jsm -f <span class="hljs-string">"api.yaml"</span> -o ../src/models
+<span class="hljs-comment"># or for a json file</span>
+jsm -f <span class="hljs-string">"api.json"</span> -o ../src/models</code></pre>
+				<p>Using globs you can get a whole directory and its subdirectories:</p>
+				<pre><code class="language-bash">jsm -f <span class="hljs-string">"models/**/*.yaml"</span> -o ../src/models</code></pre>
+				<p>When you produce your files, you can access them like any other file:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> {Address} = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./models/Address"</span>);
+<span class="hljs-keyword">const</span> adr = <span class="hljs-keyword">new</span> Address();</code></pre>
+				<p>Let&#39;s say you have an existing object you got from a CSV file. You can pass that object in (once it has been shaped)
+				and validate it right away:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> {Address} = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./models/Address"</span>);
+<span class="hljs-keyword">const</span> val = someJsonFromSomewhere();
+<span class="hljs-keyword">const</span> adr = <span class="hljs-keyword">new</span> Address(val);
+adr.validate().then(<span class="hljs-function">(<span class="hljs-params">validationErrors</span>)=&gt;</span>{
+    <span class="hljs-keyword">if</span> (validationErrors.length === <span class="hljs-number">0</span>){ 
+    <span class="hljs-comment">// do something cool</span>
+    }<span class="hljs-keyword">else</span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Validation failed:\n"</span>, validationErrors);
+    }
+}).catch(<span class="hljs-function">(<span class="hljs-params">e</span>)=&gt;</span>{
+    <span class="hljs-built_in">console</span>.error(e);
+})</code></pre>
+				<p>To get all this delicious sugar in your bloodstream, you must install jsm as above. But you must also install three other dependencies:</p>
+				<pre><code class="language-bash">sudo npm install @scrawl/json.schema.model -g
+<span class="hljs-comment"># then install local runtime dependencies</span>
+npm install class-transformer-validator class-transformer class-validator --save</code></pre>
+				<a href="#some-more-notes" id="some-more-notes" style="color: inherit; text-decoration: none;">
+					<h2>Some more notes</h2>
+				</a>
+				<p>If you are not using TypeScript, you will need to take one further step to use the generated files. You must install
+					the TypeScript compiler and use it turn the generated files into something usable. It does require a few special
+				flags to compile correctly. </p>
+				<pre><code class="language-bash">tsc --target es2015 --lib <span class="hljs-string">'ES2015'</span> --module <span class="hljs-string">'commonjs'</span> --sourceMap --outDir ./myDir myFile <span class="hljs-comment"># or files</span></code></pre>
+				<p>Add this command to your package.json, webpack, gulp, or grunt file.</p>
+				<a href="#some-more-more-notes" id="some-more-more-notes" style="color: inherit; text-decoration: none;">
+					<h2>Some more more notes</h2>
+				</a>
+				<p>The files that are generated are completely generated every time. Any changes you make to a generated file will
+					by lost the next time you run jsm. But, these are just classes, and simple classes at that. To customize the
+				behavior of these classes, just inherit from them and customize your behavior there.</p>
+				<p>make[3]: Entering directory &#39;/mnt/e/workspace/core.jsm&#39;</p>
+				<a href="#building" id="building" style="color: inherit; text-decoration: none;">
+					<h1>Building</h1>
+				</a>
+				<p>This project is built using <a href="https://www.gnu.org/software/make/manual/html_node/index.html">GNU make</a>. Get it from the usual channels. The <code>makefile</code> included here provides the following verbs:</p>
+				<a href="#file-apps-mk" id="file-apps-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: apps-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Description</td>
+							<td>These are the global commands the make system understands. These are all overrideable, so if for instance you want to use <code>yarn</code> instead of <code>npm</code>, you can overide <code>NPM=yarm</code> and et viola.</td>
+						</tr>
+						<tr>
+							<td>FIND</td>
+							<td>Be careful with this one if you are in windows. It expects linux <code>find</code> not CMD <code>find</code> and you may need to update the path to your local cygwin instance</td>
+						</tr>
+						<tr>
+							<td>NPM</td>
+							<td>NPM executable</td>
+						</tr>
+						<tr>
+							<td>NPM-PUBLIC</td>
+							<td>Alwaays returns pure npm for publishing to the npm registry</td>
+						</tr>
+						<tr>
+							<td>RM</td>
+							<td>The delete command</td>
+						</tr>
+						<tr>
+							<td>MKDIR</td>
+							<td>The command to make directories</td>
+						</tr>
+						<tr>
+							<td>MKDIRP</td>
+							<td>The beloved <code>mkdir -p</code></td>
+						</tr>
+						<tr>
+							<td>COPY</td>
+							<td>Copy command</td>
+						</tr>
+						<tr>
+							<td>TOUCH</td>
+							<td>Touch command</td>
+						</tr>
+						<tr>
+							<td>TSC</td>
+							<td>The TypeScript compiler specifying the module system and the source library</td>
+						</tr>
+						<tr>
+							<td>DOCKER</td>
+							<td>The docker CLI executable</td>
+						</tr>
+						<tr>
+							<td>PERL</td>
+							<td>PERL is used to generate these docs</td>
+						</tr>
+						<tr>
+							<td>JSM</td>
+							<td>The Javascript Module Schema package</td>
+						</tr>
+						<tr>
+							<td>GIT</td>
+							<td>GIT cli</td>
+						</tr>
+						<tr>
+							<td>RMDIR</td>
+							<td>rimraf, delete an entire directory</td>
+						</tr>
+						<tr>
+							<td>SCP</td>
+							<td>Secure Copy over ssh</td>
+						</tr>
+						<tr>
+							<td>SSH</td>
+							<td>ssh. &#39;nuff said</td>
+						</tr>
+						<tr>
+							<td>SED</td>
+							<td>sed - mostly used when applying the current version to the docker-compose remotely</td>
+						</tr>
+						<tr>
+							<td>BABEL</td>
+							<td>Bable for compiling ES(X) code to JS</td>
+						</tr>
+						<tr>
+							<td>TSDOCS</td>
+							<td>The path to the typedoc executable</td>
+						</tr>
+						<tr>
+							<td>JSM</td>
+							<td>The json schema model generator</td>
+						</tr>
+						<tr>
+							<td>REPORT-TIME</td>
+							<td>When running some compilations, the system will call the <code>time</code> program when running to see what is going on. This must be <code>true</code> for that to happen</td>
+						</tr>
+						<tr>
+							<td>TIME</td>
+							<td>Long running tasks will be <code>time</code>d to track performance if REPORT-TIME is true</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-clean-mk" id="file-clean-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: clean-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Description</td>
+							<td>Recipes for cleaning up after yourself</td>
+						</tr>
+						<tr>
+							<td>clean</td>
+							<td>Clean up the out dir by deleting everything in it</td>
+						</tr>
+						<tr>
+							<td>clean-all</td>
+							<td>Alias for dist-clean</td>
+						</tr>
+						<tr>
+							<td>dist-clean</td>
+							<td>Clean up the out dir <em>and</em> the node_modules directory by deleting everything in it</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-ejsfile-mk" id="file-ejsfile-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: ejsfile-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Description</td>
+							<td>Got some ejs or other template files you want to accompany your code? This is the right place.</td>
+						</tr>
+						<tr>
+							<td>EJS-TEMPLATES-DIR</td>
+							<td>The directory under the src directory where we will find the templates</td>
+						</tr>
+						<tr>
+							<td>EJS-EXTENSION</td>
+							<td>So maybe you want to use another templting system? Set the extension here.</td>
+						</tr>
+						<tr>
+							<td>EJS-FILES-OUT</td>
+							<td>This is the full output, use this variable in your build dependencies</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-info-mk" id="file-info-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: info-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>print-var-</td>
+							<td>This is a debugging tool. It allows you to see the value of any variable in the makefile by appending it to this like so: make print-var-HSCONFIG</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-make-docs-mk" id="file-make-docs-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: make-docs-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>help</td>
+							<td>Show this help.</td>
+						</tr>
+						<tr>
+							<td>help-to-md</td>
+							<td>Create a markdown file of the makefile help</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-npm-mk" id="file-npm-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: npm-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Description</td>
+							<td>Tools for working with the npm repository</td>
+						</tr>
+						<tr>
+							<td>publish-npm</td>
+							<td>This will call npm publish</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-options" id="file-options" style="color: inherit; text-decoration: none;">
+					<h2>File: options:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>build</td>
+							<td>Compile typescript to javascript</td>
+						</tr>
+						<tr>
+							<td>publish</td>
+							<td>Publish the project to docker repository</td>
+						</tr>
+						<tr>
+							<td>release</td>
+							<td>Release a version of the system to NPM. This will version up the patch number and go from there</td>
+						</tr>
+						<tr>
+							<td>release-prod</td>
+							<td>Release a production version of the system to NPM. This will version up the minor numberm build and then publish</td>
+						</tr>
+						<tr>
+							<td>tsdocs</td>
+							<td>Generate technical docs</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-project-mk" id="file-project-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: project-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Description</td>
+							<td>Tools for working with package.json and other meta information around the project directory</td>
+						</tr>
+						<tr>
+							<td>OUT-DIR</td>
+							<td>The output directory for the build</td>
+						</tr>
+						<tr>
+							<td>SRC-DIR</td>
+							<td>Where to find source files</td>
+						</tr>
+						<tr>
+							<td>BUILD_TYPE</td>
+							<td>Can be one of dev, prod, or stage. It is used to deploy artifacts (the ones that use it are locally documented) and to name a version number</td>
+						</tr>
+						<tr>
+							<td>VERSION-TYPE</td>
+							<td>The version type speficies what portion of the build number will be incremented. Standard choices are <code>preminor</code> for prod (0.X.0), <code>prepatch</code> for staging (0.0.X) and <code>prelease</code> for dev (0.0.0-dev.X)</td>
+						</tr>
+						<tr>
+							<td>VERSION-SUFFIX</td>
+							<td>The string that gets appended to the version (0.0.0-XXXX.0)</td>
+						</tr>
+						<tr>
+							<td>PACKAGEJSON-FILE</td>
+							<td>The name and location of the package.json file.</td>
+						</tr>
+						<tr>
+							<td>LIB</td>
+							<td>The location of the node_modules directory. Use this var to specify your build depdency</td>
+						</tr>
+						<tr>
+							<td>PACKAGEJSON-OUT</td>
+							<td>The build target for package.json. Use this var to specify your build depdency</td>
+						</tr>
+						<tr>
+							<td>README-FILE</td>
+							<td>The name of your readme file</td>
+						</tr>
+						<tr>
+							<td>README-FILE-OUT</td>
+							<td>The build target for the readme file. Use this var to specify your build depdency</td>
+						</tr>
+						<tr>
+							<td>install-dev-env</td>
+							<td>Installs the development environment for you</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-semver-mk" id="file-semver-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: semver-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Description</td>
+							<td>This file contains some helpers for defining the semantic version of your project. Since we include the build type in the version, this also defines the BUILD-TYPE variable</td>
+						</tr>
+						<tr>
+							<td>PUSH-ON-VERSION</td>
+							<td>When true, the repo will be automatically pushed on version increment</td>
+						</tr>
+						<tr>
+							<td>define</td>
+							<td>Call this function to create the CURRENT-VERSION variable which will contain the current instance version from package.json</td>
+						</tr>
+						<tr>
+							<td>version-up</td>
+							<td>This is the recipe to up the version number. Set the variables as necessary and run this.</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-ts-mk" id="file-ts-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: ts-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Description</td>
+							<td>Recipes for compiling typescript</td>
+						</tr>
+						<tr>
+							<td>COMPILE-TS</td>
+							<td>Use this to define a build dependency using make&#39;s file algorithms</td>
+						</tr>
+						<tr>
+							<td>TS-DECLARE</td>
+							<td>When true, a declaration file will be generated for each module</td>
+						</tr>
+						<tr>
+							<td>BUILD-TS</td>
+							<td>Use this to use the tsconfig files to build the directory</td>
+						</tr>
+						<tr>
+							<td>watch</td>
+							<td>Wtahc the directory defined in the tsconfig.json file</td>
+						</tr>
+				</tbody></table>
+				<a href="#file-tsdocs-mk" id="file-tsdocs-mk" style="color: inherit; text-decoration: none;">
+					<h2>File: tsdocs-mk:</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Var/Verb</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Description</td>
+							<td>Recipes for creating ts technical docs</td>
+						</tr>
+						<tr>
+							<td>TYPEDOC-CONFIG-FILE</td>
+							<td>The typedocs config file</td>
+						</tr>
+						<tr>
+							<td>DOCS-OUT</td>
+							<td>The directory where the docs will be generated. This is the build dependency</td>
+						</tr>
+						<tr>
+							<td>HTML-DOCS-DIR</td>
+							<td>The directory where to place HTML documentation. If blank, it will not be generated</td>
+						</tr>
+						<tr>
+							<td>MD-DOCS-DIR</td>
+							<td>The directory where to place markdown documentation. If blank, it will not be generated</td>
+						</tr>
+				</tbody></table>
+				<p>make[3]: Leaving directory &#39;/mnt/e/workspace/core.jsm&#39;</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_anyprop_.html">"<wbr>Any<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_arrayprop_.html">"<wbr>Array<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_baseprop_.html">"<wbr>Base<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_booleanprop_.html">"<wbr>Boolean<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_dateprop_.html">"<wbr>Date<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_enumprop_.html">"<wbr>Enum<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_integerprop_.html">"<wbr>Integer<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_numberprop_.html">"<wbr>Number<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_objectparser_.html">"<wbr>Object<wbr>Parser"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_objectprop_.html">"<wbr>Object<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_stringprop_.html">"<wbr>String<wbr>Prop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_crawl_.html">"crawl"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_define_modules_.html">"define.modules"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_deref_.html">"deref"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_file_payload_.html">"file.payload"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_generate_paths_.html">"generate.paths"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_get_files_.html">"get.files"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_obj_to_root_.html">"obj.to.root"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_process_files_.html">"process.files"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

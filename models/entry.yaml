@@ -1,0 +1,49 @@
+Entry:
+  title: An entry in a log of some sort
+  type: object
+  properties:
+    name:
+      title: The name of the entry
+      type: string
+    summary:
+      title: A description of the entry
+      type: string
+      max-length: 128
+    content:
+      title: A longer description
+      type: string
+    published:
+      title: When it was published/recorded
+      type: string
+      format: date-time
+    updated:
+      title: Date of last update
+      type: string
+      format: date-time
+    author:
+      title: Who created
+      type: string
+    categories:
+      title: The categories that the entry applies to
+      type: array
+      items:
+        type: string
+    url:
+      title: An associated url
+      type: string
+    uid:
+      title: The global identifier
+      type: string
+    syndication:
+      title: How it got here
+      type: array
+      items:
+        type: string
+    location:
+      title: If there is a location associated with ntery
+      type: string
+    comments:
+      title: Offical comments
+      $ref: ./comment.yaml
+
+

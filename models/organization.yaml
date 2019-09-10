@@ -1,0 +1,39 @@
+Organization:
+  type: object
+  properties:
+    name:
+      type: string
+    sort:
+      title: How to sort this name in lists
+      type: string
+    addresses:
+      title: The physical addresses
+      type: array
+      items:
+        $ref: ./address.yaml
+    phones:
+      title: All phone numbers for the organization
+      type: array
+      items:
+        $ref: ./phone.yaml
+    url:
+      title: An associated url
+      type: string
+    uid:
+      title: The global identifier
+      type: string
+    tags:
+      title: Tags to locate the thing later
+      type: array
+      items:
+        type: string
+    comments:
+      title: Offical comments
+      type: array
+      items:
+        $ref: ./comment.yaml
+    notes:
+      title: Internal notes
+      type: array
+      items:
+        $ref: ./comment.yaml

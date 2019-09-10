@@ -1,0 +1,1 @@
+console.info("To test this app, run it from the dist directory");

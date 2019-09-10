@@ -1,0 +1,20 @@
+{
+	"curly"        : true,
+	"eqeqeq"       : true,
+	"freeze"       : true,
+	"funcscope"    : true,
+	"futurehostile": true,
+	"latedef"      : true,
+	"noarg"        : true,
+	"nonbsp"       : true,
+	"shadow"       : true,
+	"strict"       : true,
+	"unused"       : true,
+	"browser"      : true,
+	"devel"        : true,
+	"jquery"       : true,
+	"node"         : true,
+	"shelljs"      : true,
+	"esnext"       : true,
+	"-W078"        : false
+}
