@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@terryweiss/config": "^3.0.0",
+
     "@terryweiss/logger": "^3.0.0",
     "@types/async": "^2.4.2",
     "@types/ejs": "^2.6.3",
