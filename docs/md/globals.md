@@ -1,4 +1,8 @@
-> # core.jsm
+**[core.jsm](README.md)**
+
+[Globals](globals.md)
+
+# core.jsm
 
 ## Index
 

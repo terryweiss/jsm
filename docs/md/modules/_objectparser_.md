@@ -1,4 +1,8 @@
-> # External module: "ObjectParser"
+**[core.jsm](../README.md)**
+
+[Globals](../globals.md) › [&quot;ObjectParser&quot;](_objectparser_.md)
+
+# External module: "ObjectParser"
 
 Anything that has a json schema type of `object` with a `properties`, it will be parsed by this module and the appropriate types will be assigned to each
 property that belongs to the object

@@ -1,4 +1,8 @@
-> # External module: "NumberProp"
+**[core.jsm](../README.md)**
+
+[Globals](../globals.md) › [&quot;NumberProp&quot;](_numberprop_.md)
+
+# External module: "NumberProp"
 
 A Number node. This will validate the value it is connected with and render it down
 

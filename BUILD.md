@@ -1,4 +1,4 @@
-make[3]: Entering directory '/mnt/e/workspace/core.jsm'
+make[1]: Entering directory '/mnt/c/workspace/tw.jsm'
 # Building
 This project is built using [GNU make](https://www.gnu.org/software/make/manual/html_node/index.html). Get it from the usual channels. The `makefile` included here provides the following verbs:
 ## File: apps-mk:
@@ -123,4 +123,4 @@ This project is built using [GNU make](https://www.gnu.org/software/make/manual/
 | HTML-DOCS-DIR | The directory where to place HTML documentation. If blank, it will not be generated
 | MD-DOCS-DIR | The directory where to place markdown documentation. If blank, it will not be generated
 
-make[3]: Leaving directory '/mnt/e/workspace/core.jsm'
+make[1]: Leaving directory '/mnt/c/workspace/tw.jsm'

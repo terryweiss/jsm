@@ -1,4 +1,8 @@
-> # Class: ObjectParser
+**[core.jsm](../README.md)**
+
+[Globals](../globals.md) › [&quot;ObjectParser&quot;](../modules/_objectparser_.md) › [ObjectParser](_objectparser_.objectparser.md)
+
+# Class: ObjectParser
 
 Anything that has a json schema type of `object` with a `properties`, it will be parsed by this module and the appropriate types will be assigned to each
 property that belongs to the object.
@@ -44,7 +48,7 @@ property that belongs to the object.
 
 \+ **new ObjectParser**(`node`: any, `symbols`: any): *[ObjectParser](_objectparser_.objectparser.md)*
 
-Defined in ObjectParser.ts:31
+*Defined in [ObjectParser.ts:31](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L31)*
 
 **Parameters:**
 
@@ -61,7 +65,7 @@ Name | Type | Description |
 
 • **description**? : *undefined | string*
 
-Defined in ObjectParser.ts:96
+*Defined in [ObjectParser.ts:96](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L96)*
 
 Documentation
 
@@ -71,7 +75,7 @@ ___
 
 • **instanceName**: *string*
 
-Defined in ObjectParser.ts:75
+*Defined in [ObjectParser.ts:75](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L75)*
 
 The instance name when referenced by a parent or outer model
 
@@ -81,7 +85,7 @@ ___
 
 • **members**: *object*
 
-Defined in ObjectParser.ts:63
+*Defined in [ObjectParser.ts:63](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L63)*
 
 Decorated properties
 
@@ -95,7 +99,7 @@ ___
 
 • **modelExtends**? : *undefined | string*
 
-Defined in ObjectParser.ts:55
+*Defined in [ObjectParser.ts:55](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L55)*
 
 If the model extends an object, it goes here
 
@@ -105,7 +109,7 @@ ___
 
 • **modelName**: *string*
 
-Defined in ObjectParser.ts:79
+*Defined in [ObjectParser.ts:79](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L79)*
 
 The name of the generated model
 
@@ -115,7 +119,7 @@ ___
 
 • **modelNamespace**? : *undefined | string*
 
-Defined in ObjectParser.ts:59
+*Defined in [ObjectParser.ts:59](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L59)*
 
 The documentable namespace
 
@@ -125,7 +129,7 @@ ___
 
 • **modelPath**: *string*
 
-Defined in ObjectParser.ts:83
+*Defined in [ObjectParser.ts:83](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L83)*
 
 The model path is the disk path for the model
 
@@ -135,7 +139,7 @@ ___
 
 • **name**: *string*
 
-Defined in ObjectParser.ts:88
+*Defined in [ObjectParser.ts:88](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L88)*
 
 The name of the symbol
 
@@ -145,7 +149,7 @@ ___
 
 • **node**: *any*
 
-Defined in ObjectParser.ts:37
+*Defined in [ObjectParser.ts:37](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L37)*
 
 The node being managed
 
@@ -155,7 +159,7 @@ ___
 
 • **properties**: *any*
 
-Defined in ObjectParser.ts:71
+*Defined in [ObjectParser.ts:71](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L71)*
 
 The raw properties of the schema definition
 
@@ -165,7 +169,7 @@ ___
 
 • **required**: *string[]*
 
-Defined in ObjectParser.ts:67
+*Defined in [ObjectParser.ts:67](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L67)*
 
 What fields are required
 
@@ -175,7 +179,7 @@ ___
 
 • **symbols**: *any*
 
-Defined in ObjectParser.ts:37
+*Defined in [ObjectParser.ts:37](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L37)*
 
 The entire symbol tree to allow the parser to look up references
 
@@ -185,7 +189,7 @@ ___
 
 • **title**? : *undefined | string*
 
-Defined in ObjectParser.ts:92
+*Defined in [ObjectParser.ts:92](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L92)*
 
 Documentation
 
@@ -195,7 +199,7 @@ Documentation
 
 ▸ **parse**(): *void*
 
-Defined in ObjectParser.ts:142
+*Defined in [ObjectParser.ts:142](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L142)*
 
 Parse the properties
 
@@ -207,7 +211,7 @@ ___
 
 ▸ **render**(): *void*
 
-Defined in ObjectParser.ts:110
+*Defined in [ObjectParser.ts:110](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L110)*
 
 Renders a model to a string
 
@@ -219,7 +223,7 @@ Renders a model to a string
 
 ### ▪ **defaultTemplateOptions**: *object*
 
-Defined in ObjectParser.ts:100
+*Defined in [ObjectParser.ts:100](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L100)*
 
 The default options for the template render
 
@@ -227,25 +231,25 @@ The default options for the template render
 
 • **compileDebug**: *boolean* = false
 
-Defined in ObjectParser.ts:103
+*Defined in [ObjectParser.ts:103](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L103)*
 
 ###  debug
 
 • **debug**: *boolean* = false
 
-Defined in ObjectParser.ts:102
+*Defined in [ObjectParser.ts:102](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L102)*
 
 ###  rmWhitespace
 
 • **rmWhitespace**: *boolean* = false
 
-Defined in ObjectParser.ts:101
+*Defined in [ObjectParser.ts:101](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L101)*
 
 ###  escape
 
 ▸ **escape**(`s`: any): *any*
 
-Defined in ObjectParser.ts:104
+*Defined in [ObjectParser.ts:104](https://github.com/terryweiss/jsm/blob/072a529/src/ObjectParser.ts#L104)*
 
 **Parameters:**
 

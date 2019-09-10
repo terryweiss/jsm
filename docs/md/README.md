@@ -1,35 +1,48 @@
+**[core.jsm](README.md)**
+
+[Globals](globals.md)
+
+# core.jsm
+
 # JSON Schema Model (jsm)
 
 Generates TypeScript decorated with [class-validator](https://github.com/typestack/class-validator) decorators based on a json-schema.
 
 ## State of Development
-Like many other open-source projects that are understaffed, this is somewhere on the continuum
-between "good enough to get out the door" and "all of the planned and dreamed for features are there".
-In this case that is further exacerbated by the fact that json-schema seems to have devolved into a 
-a few different dialects. 
+This project is envisioned as a way of gaining access to strongly typed definitions/components from
+the Swagger json-schema dialect, with pure json-schema a nice-to-have. But some differences from Swagger 
+to json-schema were difficult to reconcile and led to headaches. 
+Finally, `class-validator` accepts json-schema in its validation tools, but the decorators
+are a disjoint language against Swagger and json-schema. Meaning there are 3 potential sources of validation information. 
+In the end, the specific keywords supported were
+driven as much by what was possible as  what I thought was "right".'
 
-This project was envisioned as a way of gaining access to strongly typed definitions/components from
-Swagger, with pure json-schema a nice-to-have. But some differences from Swagger to json-schema were difficult to reconcile.
-Finally, class-validator accepts json-schema in its validation tools, but the decorators
-are a disjoint language against Swagger and json-schema. 
+Which might beg the question: why do all this?  Well, one answer is that this project makes sense if
+you consider json-schema/Swagger as a means of validating serialized objects in transit or at rest.
+But once the JSON was hydrated, there is a role for the object that contains the hydrated instance to continue the 
+original schema's validation with run time checks as well as the values it mutates along its lifetime. 
 
-Which might beg the question: why do this? If you aren't asking that question, you aren't thinking 
-carefully about what this project does. Well, one answer is that this project makes sense if
-you consider json-schema/Swagger as a means of validating serialized objects in transit or at rest
-and that there is a role for the object that contains the hydrated instance to continue the 
-original schema's validation as well as the values it mutates along its lifetime. Indeed, this
-library does not try to connect the lifetimes of the JSON and the object in any way. If you use
+This library does not try to connect the lifetimes of the JSON and the object in any way. If you use
 Swagger, the swagger-tools will pull these objects out of `definitions` and `paths` and return you a
-plain old JS object. You can pass that into one of these constructors and, since it is validated, serialize
+plain old JS object - you get it in the request object. You can pass that POJO into one of these constructors and once validated, serialize
 it again knowing it has to be valid. Anyway, that's the idea.
 
-# Installation
-```bash
-sudo npm install @concorde2k/json.schema.model -g
+Contributors: You are welcome! Some of what this thing lacks:
+* unit tests
+* A means for allowing consumers to substitute their own generation templates
+* Code review
+* Better documentation
 
+To get a good feel for what this does, check the repo's models/ and out/ directories and consider each file pair *.yaml -> *.ts
+
+# Installation
+This is a CLI tool, not a library so you will need to install it globally.
+```bash
+sudo npm install @terryweiss/jsm -g
 ```
+
 # Technical Docs
-A description of the internal API for contributors can be found on [bitbucket](https://bitbucket.org/concorde2000/core.jsm/src/master/docs/md/SUMMARY.md)
+A description of the internal API for contributors can be found on [github](https://bitbucket.org/concorde2000/core.jsm/src/master/docs/md/SUMMARY.md)
 or [locally](./docs/html/index.html). 
 
 # CLI
@@ -39,10 +52,13 @@ This is a static code generator, there is no API, just a CLI. The options are:
 * `--version`       Show version number
 * `--log-level`     Sets the logging level for the process. Choices are
                     "trace", "debug", "warn", "data", "log", "info", "warn", "error"
-* `-f, --infiles`   The path to your schema files, can be a glob to yaml or json
-                     files or a mix thereof
+* `-i, --infiles`   The path to your schema files, can be a glob to yaml or json
+                     files or a mix thereof. It uses a globbing library, so you can be creative.
 * `-o, --outpath`   The path to write the files to. Class paths are appended to this
 * `-r, --rootName`  When dealing with a schema that does not contains a root element, you can name the resultant object with this. This is only valuable when you generating from a single file.
+
+# Examples
+You can find a set of hcard derived models in the `models/` folder. Output is found in `out/` in the repo.                     
                     
 # Validation keywords
 `json.schema.model` supports the common subset of keywords from swagger and jon-schema. Where the interpretations are
@@ -164,7 +180,7 @@ adr.validate().then((validationErrors)=>{
 	console.error(e);
 })
 ```
-To get all this delicious sugar in your bloodstream, you must install jsm as above. But you must also install three other dependencies:
+To get all this delicious sugar in your bloodstream, you must install jsm as above. But you must also install three other dependencies in the project that gets the output:
 ```bash
 sudo npm install @scrawl/json.schema.model -g
 # then install local runtime dependencies
@@ -181,7 +197,5 @@ Add this command to your package.json, webpack, gulp, or grunt file.
 
 ## Some more more notes
 The files that are generated are completely generated every time. Any changes you make to a generated file will
-by lost the next time you run jsm. But, these are just classes, and simple classes at that. To customize the 
+be lost the next time you run jsm. But, these are just classes, and simple classes at that. To customize the 
 behavior of these classes, just inherit from them and customize your behavior there.
-
-[[include:./BUILD.md]]

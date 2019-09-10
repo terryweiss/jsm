@@ -1,4 +1,8 @@
-> # External module: "process.files"
+**[core.jsm](../README.md)**
+
+[Globals](../globals.md) › [&quot;process.files&quot;](_process_files_.md)
+
+# External module: "process.files"
 
 Controls the order of operations for rendering the entire batch
 
@@ -14,9 +18,9 @@ Controls the order of operations for rendering the entire batch
 
 ###  processFiles
 
-▸ **processFiles**(`symbols`: any, `callback`: `Function`): *void*
+▸ **processFiles**(`symbols`: any, `callback`: Function): *void*
 
-Defined in process.files.ts:16
+*Defined in [process.files.ts:16](https://github.com/terryweiss/jsm/blob/072a529/src/process.files.ts#L16)*
 
 Controls the order of operations for rendering the entire batch
 
@@ -25,6 +29,6 @@ Controls the order of operations for rendering the entire batch
 Name | Type | Description |
 ------ | ------ | ------ |
 `symbols` | any | The symbol tree to process |
-`callback` | `Function` | Standard callback  |
+`callback` | Function | Standard callback  |
 
 **Returns:** *void*
