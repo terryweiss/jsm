@@ -28,6 +28,8 @@ Contributors: You are welcome! Some of what this thing lacks:
 * Code review
 * Better documentation
 
+To get a good feel for what this does, check the repo's models/ and out/ directories and consider each file pair *.yaml -> *.ts
+
 # Installation
 This is a CLI tool, not a library so you will need to install it globally.
 ```bash
