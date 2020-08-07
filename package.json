@@ -28,7 +28,7 @@
     "@types/number-to-words": "^1.2.0",
     "@types/underscore.string": "0.0.33",
     "async": "^2.6.3",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-transformer-validator": "^0.7.1",
     "class-validator": "^0.9.1",
     "ejs": "^2.6.2",
