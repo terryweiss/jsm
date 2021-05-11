@@ -115,35 +115,6 @@
     yamljs "^0.3.0"
     yargs "^11.1.0"
 
-"@terryweiss/jsm@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@terryweiss/jsm/-/jsm-2.0.2.tgz#e7cec7ff2d9d83a0ce921df23f6df65a3dde413b"
-  integrity sha512-+yMwNC3CkZmQFB3jEC1npoM/anub1KcNOdK5z4YX7iqFiBxdg+4JsvKVFTnIVz6mNdui3W4I58SPrVV3tZz0Dw==
-  dependencies:
-    "@terryweiss/config" "^3.0.0"
-    "@terryweiss/logger" "^3.0.0"
-    "@types/async" "^2.4.2"
-    "@types/ejs" "^2.6.3"
-    "@types/glob" "^7.1.1"
-    "@types/js-yaml" "^3.12.1"
-    "@types/json-schema" "^7.0.3"
-    "@types/lodash" "^4.14.136"
-    "@types/mkdirp" "^0.5.2"
-    "@types/number-to-words" "^1.2.0"
-    "@types/underscore.string" "0.0.33"
-    async "^2.6.3"
-    class-transformer "^0.2.3"
-    class-transformer-validator "^0.7.1"
-    class-validator "^0.9.1"
-    ejs "^2.6.2"
-    glob "^7.1.4"
-    js-yaml "^3.13.1"
-    json-schema-ref-parser "^6.1.0"
-    lodash "^4.17.15"
-    mkdirp "^0.5.1"
-    number-to-words "^1.2.4"
-    underscore.string "^3.3.5"
-
 "@terryweiss/logger@^3.0.0":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@terryweiss/logger/-/logger-3.0.1.tgz#829ca0dfe8172c3fd7da2cfa3caabfb1cbc5324e"
@@ -1346,9 +1317,9 @@ home-or-tmp@^2.0.0:
     os-tmpdir "^1.0.1"
 
 hosted-git-info@^2.1.4:
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.4.tgz#44119abaf4bc64692a16ace34700fed9c03e2546"
-  integrity sha512-pzXIvANXEFrc5oFFXRMkbLPQ2rXRoDERwDLyrcUxGhaZhgP54BBSl9Oheh7Vv0T090cszWBxPjkQQ5Sq1PbBRQ==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 http-signature@~1.2.0:
   version "1.2.0"
