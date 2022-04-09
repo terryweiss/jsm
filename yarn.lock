@@ -115,35 +115,6 @@
     yamljs "^0.3.0"
     yargs "^11.1.0"
 
-"@terryweiss/jsm@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@terryweiss/jsm/-/jsm-2.0.2.tgz#e7cec7ff2d9d83a0ce921df23f6df65a3dde413b"
-  integrity sha512-+yMwNC3CkZmQFB3jEC1npoM/anub1KcNOdK5z4YX7iqFiBxdg+4JsvKVFTnIVz6mNdui3W4I58SPrVV3tZz0Dw==
-  dependencies:
-    "@terryweiss/config" "^3.0.0"
-    "@terryweiss/logger" "^3.0.0"
-    "@types/async" "^2.4.2"
-    "@types/ejs" "^2.6.3"
-    "@types/glob" "^7.1.1"
-    "@types/js-yaml" "^3.12.1"
-    "@types/json-schema" "^7.0.3"
-    "@types/lodash" "^4.14.136"
-    "@types/mkdirp" "^0.5.2"
-    "@types/number-to-words" "^1.2.0"
-    "@types/underscore.string" "0.0.33"
-    async "^2.6.3"
-    class-transformer "^0.2.3"
-    class-transformer-validator "^0.7.1"
-    class-validator "^0.9.1"
-    ejs "^2.6.2"
-    glob "^7.1.4"
-    js-yaml "^3.13.1"
-    json-schema-ref-parser "^6.1.0"
-    lodash "^4.17.15"
-    mkdirp "^0.5.1"
-    number-to-words "^1.2.4"
-    underscore.string "^3.3.5"
-
 "@terryweiss/logger@^3.0.0":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@terryweiss/logger/-/logger-3.0.1.tgz#829ca0dfe8172c3fd7da2cfa3caabfb1cbc5324e"
@@ -1866,9 +1837,9 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
     minimist "0.0.8"
 
 moment@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
+  integrity sha512-UgzG4rvxYpN15jgCmVJwac49h9ly9NurikMWGPdVxm8GZD6XjkKPxDTjQQ43gtGgnV3X0cAyWDdP2Wexoquifg==
 
 ms@2.0.0:
   version "2.0.0"
