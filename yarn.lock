@@ -115,35 +115,6 @@
     yamljs "^0.3.0"
     yargs "^11.1.0"
 
-"@terryweiss/jsm@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@terryweiss/jsm/-/jsm-2.0.2.tgz#e7cec7ff2d9d83a0ce921df23f6df65a3dde413b"
-  integrity sha512-+yMwNC3CkZmQFB3jEC1npoM/anub1KcNOdK5z4YX7iqFiBxdg+4JsvKVFTnIVz6mNdui3W4I58SPrVV3tZz0Dw==
-  dependencies:
-    "@terryweiss/config" "^3.0.0"
-    "@terryweiss/logger" "^3.0.0"
-    "@types/async" "^2.4.2"
-    "@types/ejs" "^2.6.3"
-    "@types/glob" "^7.1.1"
-    "@types/js-yaml" "^3.12.1"
-    "@types/json-schema" "^7.0.3"
-    "@types/lodash" "^4.14.136"
-    "@types/mkdirp" "^0.5.2"
-    "@types/number-to-words" "^1.2.0"
-    "@types/underscore.string" "0.0.33"
-    async "^2.6.3"
-    class-transformer "^0.2.3"
-    class-transformer-validator "^0.7.1"
-    class-validator "^0.9.1"
-    ejs "^2.6.2"
-    glob "^7.1.4"
-    js-yaml "^3.13.1"
-    json-schema-ref-parser "^6.1.0"
-    lodash "^4.17.15"
-    mkdirp "^0.5.1"
-    number-to-words "^1.2.4"
-    underscore.string "^3.3.5"
-
 "@terryweiss/logger@^3.0.0":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@terryweiss/logger/-/logger-3.0.1.tgz#829ca0dfe8172c3fd7da2cfa3caabfb1cbc5324e"
@@ -2210,9 +2181,9 @@ punycode@^2.0.0, punycode@^2.1.0:
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 react-is@^16.8.1:
   version "16.9.0"
